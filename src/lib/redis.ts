@@ -1,5 +1,4 @@
 import Redis from 'ioredis';
-import { REDIS_CONFIG } from './constants';
 
 let redis: Redis | null = null;
 let isConnected = false;

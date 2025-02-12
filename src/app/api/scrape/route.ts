@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
 import { urlValidator } from '@/services/UrlValidator';
-import { HTTP_STATUS } from '@/lib/constants';
 import { scrapeMetadata } from '@/lib/api';
 import { createErrorResponse, handleApiError } from '@/lib/utils/errors';
 import type { ErrorResponse } from '@/lib/types';
