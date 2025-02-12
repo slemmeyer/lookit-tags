@@ -19,6 +19,7 @@ export const HTTP_STATUS = {
   NOT_FOUND: 404,
   TOO_MANY_REQUESTS: 429,
   INTERNAL_SERVER_ERROR: 500,
+  GATEWAY_TIMEOUT: 504,
 } as const;
 
 export const ERROR_CODES = {
@@ -26,6 +27,7 @@ export const ERROR_CODES = {
   RATE_LIMITED: 'RATE_LIMITED',
   FETCH_ERROR: 'FETCH_ERROR',
   PARSE_ERROR: 'PARSE_ERROR',
+  BLOCKED_DOMAIN: 'BLOCKED_DOMAIN',
 } as const;
 
 export const ERROR_MESSAGES = {
@@ -33,6 +35,7 @@ export const ERROR_MESSAGES = {
   [ERROR_CODES.RATE_LIMITED]: 'Too many requests',
   [ERROR_CODES.FETCH_ERROR]: 'Failed to fetch metadata',
   [ERROR_CODES.PARSE_ERROR]: 'Failed to parse metadata',
+  [ERROR_CODES.BLOCKED_DOMAIN]: 'Domain not allowed',
 } as const;
 
 // UI Constants
@@ -64,7 +67,7 @@ export const RATE_LIMIT = {
 export const SECURITY = {
   BLOCKED_DOMAINS: [
     'example-malicious-site.com',
-  ],
+  ] as string[],
   ALLOWED_ORIGINS: process.env.NODE_ENV === 'development' 
     ? ['http://localhost:3000']
     : [process.env.NEXT_PUBLIC_FRONTEND_URL].filter(Boolean),

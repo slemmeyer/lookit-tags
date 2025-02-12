@@ -1,8 +1,8 @@
-import { RateLimitConfig, RateLimitInfo, RateLimiterResponse, RateLimiterService } from './types';
+import { RateLimitConfig, RateLimiterInfo, RateLimiterResponse, RateLimiterService } from '@/lib/types';
 import { RATE_LIMIT } from '@/lib/constants';
 
 export class MemoryRateLimiter implements RateLimiterService {
-  private requests: Map<string, RateLimitInfo>;
+  private requests: Map<string, RateLimiterInfo>;
   private readonly config: RateLimitConfig;
 
   constructor(config: Partial<RateLimitConfig> = {}) {
