@@ -1,3 +1,5 @@
+import type { MetadataSectionProps } from '../types';
+
 export function MetadataSection({ title, children }: MetadataSectionProps) {
   return (
     <div className="p-6 rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
