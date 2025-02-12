@@ -41,21 +41,21 @@ export interface RateLimitConfig {
   maxRequests: number;
 }
 
-export interface RateLimitInfo {
-  isLimited: boolean;
-  remaining: number;
-  resetTime: number;
-}
-
 export interface RateLimiterResponse {
   isLimited: boolean;
   remaining: number;
   resetTime: number;
 }
 
+export interface RateLimiterInfo {
+  count: number;
+  timestamp: number;
+}
+
 export interface RateLimiterService {
-  isRateLimited(key: string): Promise<RateLimitInfo>;
+  isRateLimited(key: string): Promise<RateLimiterResponse>;
   increment(key: string): Promise<void>;
+  reset(key: string): Promise<void>;
 }
 
 // URL Validation Types
