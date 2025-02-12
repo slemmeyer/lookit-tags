@@ -1,6 +1,5 @@
 import { MetadataSection } from '../components/MetadataSection';
 import { UI_CONSTANTS } from '@/lib/constants';
-import Image from 'next/image';
 
 interface PreviewsSectionProps {
   favicon?: string;

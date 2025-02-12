@@ -5,7 +5,7 @@ import { ERROR_CODES, ERROR_MESSAGES, HTTP_STATUS } from '@/lib/constants';
 export function createErrorResponse(
   code: keyof typeof ERROR_CODES,
   customMessage?: string,
-  status = HTTP_STATUS.BAD_REQUEST
+  status: number = HTTP_STATUS.BAD_REQUEST
 ): { response: ErrorResponse; status: number } {
   return {
     response: {

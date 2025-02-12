@@ -1,7 +1,7 @@
 import { Redis } from 'ioredis';
 import { 
   RateLimitConfig, 
-  RateLimitInfo, 
+  RateLimiterInfo,
   RateLimiterResponse, 
   RateLimiterService,
   UrlValidationResult,
@@ -66,7 +66,7 @@ export class UrlValidator implements UrlValidatorService {
 
 // Memory Rate Limiter Service
 export class MemoryRateLimiter implements RateLimiterService {
-  private requests: Map<string, RateLimitInfo>;
+  private requests: Map<string, RateLimiterInfo>;
   private readonly config: RateLimitConfig;
 
   constructor(config: Partial<RateLimitConfig> = {}) {
