@@ -1,4 +1,4 @@
-# Lookit Tags
+# Lookit the tags I've found! -- aka Lookit Tags
 
 A web application for extracting and analyzing meta tags from websites.
 
@@ -6,6 +6,7 @@ A web application for extracting and analyzing meta tags from websites.
 
 The application's UI is organized into modular components, with the main metadata display logic split into focused sections:
 
+```
 src/components/MetaResults/
 ├── components/ # Reusable base components
 │ ├── MetadataSection # Wrapper for metadata sections
@@ -16,7 +17,7 @@ src/components/MetaResults/
 │ ├── CardsSection # Twitter cards & Schema.org data
 │ └── PreviewsSection # Favicon & preview images
 └── types.ts # Shared type definitions
-
+```
 Each section is responsible for rendering a specific type of metadata, making the codebase more maintainable and easier to test.
 
 ## Features
