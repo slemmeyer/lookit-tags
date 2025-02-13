@@ -28,11 +28,11 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen p-8 space-y-8" data-component="meta-checker">
-      <h1 className="text-3xl font-bold text-center" data-element="page-title">
+    <main className="min-h-screen p-8 flex flex-col items-center gap-8 bg-background" data-component="meta-checker">
+      <h1 className="text-3xl font-bold text-foreground" data-element="page-title">
         Lookit the tags I&apos;ve found!
       </h1>
-      <div className="flex flex-col items-center gap-8" data-component="meta-checker-container">
+      <div className="w-full max-w-4xl flex flex-col items-center gap-8" data-component="meta-checker-container">
         <UrlInput onSubmit={handleSubmit} isLoading={isLoading} />
         
         {error && (
