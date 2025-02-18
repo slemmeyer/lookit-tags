@@ -23,11 +23,11 @@ export default function MetaResults({ results }: MetaResultsProps) {
       {/* Title Section */}
       <MetadataSection title="Page Title">
         {results?.title ? (
-          <pre className="bg-gray-100 dark:bg-gray-800 p-3 rounded whitespace-pre-wrap break-words text-gray-900 dark:text-gray-100">
+          <pre className="code-block">
             {results.title}
           </pre>
         ) : (
-          <pre className="bg-gray-100 dark:bg-gray-800 p-3 rounded whitespace-pre-wrap break-words min-h-[2.5rem] text-gray-900 dark:text-gray-100" />
+          <pre className="code-block min-h-[2.5rem]" />
         )}
       </MetadataSection>
 
@@ -79,13 +79,13 @@ export default function MetaResults({ results }: MetaResultsProps) {
           {results?.schemaOrg?.length ? (
             results.schemaOrg.map((script, index) => (
               <div key={index} className="mb-3 last:mb-0">
-                <pre className="bg-gray-100 dark:bg-gray-800 p-3 rounded whitespace-pre-wrap break-words text-sm text-gray-900 dark:text-gray-100">
+                <pre className="code-block">
                   {formatJsonLd(script)}
                 </pre>
               </div>
             ))
           ) : (
-            <pre className="bg-gray-100 dark:bg-gray-800 p-3 rounded whitespace-pre-wrap break-words text-sm min-h-[2.5rem] text-gray-900 dark:text-gray-100" />
+            <pre className="code-block min-h-[2.5rem]" />
           )}
         </MetadataSection>
       </div>
@@ -105,12 +105,12 @@ export default function MetaResults({ results }: MetaResultsProps) {
                   }}
                 />
               </div>
-              <pre className="bg-gray-100 dark:bg-gray-800 p-3 rounded flex-1 text-sm whitespace-pre-wrap break-all text-gray-900 dark:text-gray-100">
+              <pre className="code-block flex-1 break-all">
                 {results.favicon}
               </pre>
             </div>
           ) : (
-            <pre className="bg-gray-100 dark:bg-gray-800 p-3 rounded whitespace-pre-wrap break-words text-sm min-h-[2.5rem] text-gray-900 dark:text-gray-100" />
+            <pre className="code-block min-h-[2.5rem]" />
           )}
         </MetadataSection>
 
@@ -127,12 +127,12 @@ export default function MetaResults({ results }: MetaResultsProps) {
                   }}
                 />
               </div>
-              <pre className="bg-gray-100 dark:bg-gray-800 p-3 rounded flex-1 text-sm whitespace-pre-wrap break-all text-gray-900 dark:text-gray-100">
+              <pre className="code-block flex-1 break-all">
                 {results.previewImage}
               </pre>
             </div>
           ) : (
-            <pre className="bg-gray-100 dark:bg-gray-800 p-3 rounded whitespace-pre-wrap break-words text-sm min-h-[2.5rem] text-gray-900 dark:text-gray-100" />
+            <pre className="code-block min-h-[2.5rem]" />
           )}
         </MetadataSection>
       </div>
