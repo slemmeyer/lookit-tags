@@ -5,27 +5,27 @@
 :root {
   /* Full colors for direct use */
   --background-color: #F9F9F7;
-  --foreground-color: #6B5F7B;
-  --main-color: #E4B7B7;
-  --light-accent-color: #F2BC60;
+  --foreground-color: #534761;
+  --main-color: #D49A9A;
+  --light-accent-color: #E5A833;
   --dark-accent-color: #A49DAA;
   --error-color: #EF4444;
 
   /* RGB values for opacity use */
-  --background: 249 249 247;    /* #F9F9F7 */
-  --foreground: 107 95 123;     /* #6B5F7B */
-  --main: 228 183 183;          /* #E4B7B7 */
-  --light-accent: 242 188 96;   /* #F2BC60 */
+  --background: 83 71 97;       /* #534761 */
+  --foreground: 249 249 247;    /* #F9F9F7 */
+  --main: 212 154 154;          /* #D49A9A */
+  --light-accent: 229 168 51;   /* #E5A833 */
   --dark-accent: 164 157 170;   /* #A49DAA */
   --error: 239 68 68;           /* #EF4444 */
 }
 
 .dark {
   /* Full colors for direct use */
-  --background-color: #6B5F7B;
+  --background-color: #534761;
   --foreground-color: #F9F9F7;
-  --main-color: #E4B7B7;
-  --light-accent-color: #F2BC60;
+  --main-color: #D49A9A;
+  --light-accent-color: #E5A833;
   --dark-accent-color: #A49DAA;
   --error-color: #EF4444;
 
