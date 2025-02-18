@@ -25,7 +25,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleDarkMode}
-      className="fixed top-4 right-4 p-2 rounded-lg bg-background hover:bg-dark-accent transition-colors"
+      className="theme-toggle fixed top-4 right-4 p-2 rounded-lg bg-background hover:bg-dark-accent transition-colors"
       aria-label="Toggle dark mode"
       data-component="theme-toggle"
     >

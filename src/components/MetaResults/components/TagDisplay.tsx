@@ -12,13 +12,13 @@ export function TagDisplay({ tag }: TagDisplayProps) {
       data-component="tag-display"
     >
       <div 
-        className="text-sm text-background/70 mb-1"
+        className="muted-text mb-1"
         data-element="tag-name"
       >
         {tag.name}
       </div>
       <pre 
-        className="bg-background/10 p-3 rounded whitespace-pre-wrap break-words text-sm text-background"
+        className="code-block"
         data-element="tag-content"
       >
         {tag.content}
@@ -30,7 +30,7 @@ export function TagDisplay({ tag }: TagDisplayProps) {
 export function EmptyTagDisplay() {
   return (
     <div 
-      className="text-background/50 italic"
+      className="italic-muted"
       data-component="empty-tag-display"
     >
       {UI_CONSTANTS.PLACEHOLDER.EMPTY_RESULT}

@@ -20,6 +20,7 @@ export default {
         main: "var(--main)",
         "light-accent": "var(--light-accent)",
         "dark-accent": "var(--dark-accent)",
+        error: "var(--error)",
         gray: {
           100: "var(--background)",
           200: "var(--dark-accent)",

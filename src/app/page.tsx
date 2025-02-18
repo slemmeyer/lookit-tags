@@ -28,16 +28,16 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen p-8 flex flex-col items-center gap-8 bg-background" data-component="meta-checker">
-      <h1 className="text-3xl font-display font-bold text-foreground" data-element="page-title">
+    <main className="container">
+      <h1 className="heading-primary">
         Lookit the tags I&apos;ve found!
       </h1>
-      <div className="w-full max-w-4xl flex flex-col items-center gap-8" data-component="meta-checker-container">
+      <div className="content-wrapper">
         <UrlInput onSubmit={handleSubmit} isLoading={isLoading} />
         
         {error && (
           <div 
-            className="text-error bg-error/10 p-4 rounded-lg border border-error/20"
+            className="error-message"
             data-element="error-message"
           >
             {error}

@@ -22,7 +22,7 @@ export default function UrlInput({ onSubmit, isLoading = false }: UrlInputProps)
   return (
     <form 
       onSubmit={handleSubmit} 
-      className="w-full max-w-2xl flex gap-4"
+      className="input-form"
       data-component="url-form"
     >
       <input
@@ -30,14 +30,14 @@ export default function UrlInput({ onSubmit, isLoading = false }: UrlInputProps)
         value={url}
         onChange={(e) => setUrl(e.target.value)}
         placeholder={UI_CONSTANTS.PLACEHOLDER.URL_INPUT}
-        className="flex-1 px-4 py-2 rounded-lg border border-dark-accent bg-background text-foreground shadow-sm font-mono"
+        className="text-input"
         data-element="url-input"
         required
       />
       <button
         type="submit"
         disabled={isLoading}
-        className="px-6 py-2 bg-main rounded-lg hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed shadow-sm text-background"
+        className="submit-button"
         data-element="submit-button"
       >
         {isLoading ? UI_CONSTANTS.BUTTON_TEXT.CHECKING : UI_CONSTANTS.BUTTON_TEXT.CHECK}
