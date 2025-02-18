@@ -1,22 +1,39 @@
-import { TagDisplayProps } from '../types';
+import { UI_CONSTANTS } from '@/lib/constants';
+import type { MetaTag } from '@/lib/types';
+
+interface TagDisplayProps {
+  tag: MetaTag;
+}
 
 export function TagDisplay({ tag }: TagDisplayProps) {
   return (
-    <div className="mb-2 last:mb-0">
-      <span className="font-mono text-sm text-gray-600 dark:text-gray-400">
-        {tag.name}:
-      </span>
-      <span className="ml-2 text-sm break-words">
+    <div 
+      className="mb-3 last:mb-0"
+      data-component="tag-display"
+    >
+      <div 
+        className="muted-text mb-1"
+        data-element="tag-name"
+      >
+        {tag.name}
+      </div>
+      <pre 
+        className="code-block"
+        data-element="tag-content"
+      >
         {tag.content}
-      </span>
+      </pre>
     </div>
   );
 }
 
 export function EmptyTagDisplay() {
   return (
-    <div className="text-sm text-gray-500 dark:text-gray-400 italic">
-      No tags found
+    <div 
+      className="italic-muted"
+      data-component="empty-tag-display"
+    >
+      {UI_CONSTANTS.PLACEHOLDER.EMPTY_RESULT}
     </div>
   );
 } 

@@ -10,7 +10,7 @@ interface CardsSectionProps {
 
 export function CardsSection({ twitter, schemaOrg }: CardsSectionProps) {
   return (
-    <div className="grid gap-6">
+    <div className="grid-layout">
       {/* Twitter Cards */}
       <MetadataSection title={UI_CONSTANTS.SECTIONS.TWITTER}>
         {twitter?.length ? (
@@ -27,7 +27,11 @@ export function CardsSection({ twitter, schemaOrg }: CardsSectionProps) {
         {schemaOrg?.length ? (
           <div className="space-y-4">
             {schemaOrg.map((schema, index) => (
-              <pre key={index} className="overflow-x-auto p-2 rounded bg-gray-100 dark:bg-gray-800 text-sm font-mono">
+              <pre 
+                key={index} 
+                className="code-block"
+                data-element="schema-content"
+              >
                 {JSON.stringify(JSON.parse(schema), null, 2)}
               </pre>
             ))}

@@ -7,53 +7,41 @@ interface PreviewsSectionProps {
 }
 
 export function PreviewsSection({ favicon, previewImage }: PreviewsSectionProps) {
+  const PreviewDisplay = ({ url, alt, isIcon = false }: { url: string, alt: string, isIcon?: boolean }) => (
+    <div className="grid-layout-2-cols">
+      <div className="flex items-center gap-4">
+        <div className="relative">
+          <img 
+            src={url} 
+            alt={alt}
+            className={isIcon ? 'w-6 h-6' : 'max-w-[200px] max-h-[200px] object-contain'}
+            onError={(e) => {
+              (e.target as HTMLImageElement).style.display = 'none';
+            }}
+          />
+        </div>
+        <pre className="preview-code">
+          {url}
+        </pre>
+      </div>
+    </div>
+  );
+
   return (
-    <div className="grid gap-6">
-      {/* Favicon */}
+    <div className="grid md:grid-cols-2 gap-6">
       <MetadataSection title={UI_CONSTANTS.SECTIONS.FAVICON}>
         {favicon ? (
-          <div className="flex items-center gap-3">
-            <img
-              src={favicon}
-              alt="Site favicon"
-              className="w-8 h-8 object-contain"
-              onError={(e) => {
-                e.currentTarget.style.display = 'none';
-              }}
-            />
-            <span className="text-sm break-all text-gray-600 dark:text-gray-400">
-              {favicon}
-            </span>
-          </div>
+          <PreviewDisplay url={favicon} alt="Site Favicon" isIcon={true} />
         ) : (
-          <div className="text-gray-500 dark:text-gray-400 italic">
-            No favicon found
-          </div>
+          <pre className="bg-gray-100 dark:bg-gray-800 p-3 rounded whitespace-pre-wrap break-words text-sm min-h-[2.5rem] text-gray-900 dark:text-gray-100" />
         )}
       </MetadataSection>
 
-      {/* Preview Image */}
       <MetadataSection title={UI_CONSTANTS.SECTIONS.PREVIEW}>
         {previewImage ? (
-          <div className="space-y-3">
-            <div className="relative aspect-video w-full overflow-hidden rounded-lg border border-gray-200 dark:border-gray-700">
-              <img
-                src={previewImage}
-                alt="Preview image"
-                className="object-contain w-full h-full"
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none';
-                }}
-              />
-            </div>
-            <span className="block text-sm break-all text-gray-600 dark:text-gray-400">
-              {previewImage}
-            </span>
-          </div>
+          <PreviewDisplay url={previewImage} alt="Site Preview" />
         ) : (
-          <div className="text-gray-500 dark:text-gray-400 italic">
-            No preview image found
-          </div>
+          <pre className="bg-gray-100 dark:bg-gray-800 p-3 rounded whitespace-pre-wrap break-words text-sm min-h-[2.5rem] text-gray-900 dark:text-gray-100" />
         )}
       </MetadataSection>
     </div>

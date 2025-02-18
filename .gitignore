@@ -41,8 +41,12 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Cursor-related files
+# Cursor files
 this.log
 milestone.md
 overview.md
 layout-ui.md
+
+## Repomix files
+repomix.*
+*-repo.xml

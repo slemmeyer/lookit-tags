@@ -9,9 +9,17 @@ export function TitleSection({ title }: TitleSectionProps) {
   return (
     <MetadataSection title={UI_CONSTANTS.SECTIONS.TITLE}>
       {title ? (
-        <div className="font-medium break-words">{title}</div>
+        <div 
+          className="font-medium break-words text-foreground"
+          data-element="title-content"
+        >
+          {title}
+        </div>
       ) : (
-        <div className="text-gray-500 dark:text-gray-400 italic">
+        <div 
+          className="text-foreground/50 italic"
+          data-element="title-empty"
+        >
           {UI_CONSTANTS.PLACEHOLDER.EMPTY_RESULT}
         </div>
       )}

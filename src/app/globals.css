@@ -3,17 +3,146 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Full colors for direct use */
+  --background-color: #F9F9F7;
+  --foreground-color: #534761;
+  --main-color: #D49A9A;
+  --light-accent-color: #E5A833;
+  --dark-accent-color: #A49DAA;
+  --error-color: #EF4444;
+
+  /* RGB values for opacity use */
+  --background: 83 71 97;       /* #534761 */
+  --foreground: 249 249 247;    /* #F9F9F7 */
+  --main: 212 154 154;          /* #D49A9A */
+  --light-accent: 229 168 51;   /* #E5A833 */
+  --dark-accent: 164 157 170;   /* #A49DAA */
+  --error: 239 68 68;           /* #EF4444 */
 }
 
 .dark {
-  --background: #0a0a0a;
-  --foreground: #ededed;
+  /* Full colors for direct use */
+  --background-color: #534761;
+  --foreground-color: #F9F9F7;
+  --main-color: #D49A9A;
+  --light-accent-color: #E5A833;
+  --dark-accent-color: #A49DAA;
+  --error-color: #EF4444;
+
+  /* RGB values for opacity use */
+  --background: 107 95 123;     /* #6B5F7B */
+  --foreground: 249 249 247;    /* #F9F9F7 */
+  --main: 228 183 183;          /* #E4B7B7 */
+  --light-accent: 242 188 96;   /* #F2BC60 */
+  --dark-accent: 164 157 170;   /* #A49DAA */
+  --error: 239 68 68;           /* #EF4444 */
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  color: var(--foreground-color);
+  background: var(--background-color);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer components {
+  /* Layout */
+  .container {
+    @apply min-h-screen p-8 flex flex-col items-center gap-8;
+    background: var(--background-color);
+  }
+
+  .content-wrapper {
+    @apply w-full max-w-4xl flex flex-col items-center gap-8;
+  }
+
+  .grid-layout {
+    @apply grid gap-6;
+  }
+
+  .grid-layout-2-cols {
+    @apply grid md:grid-cols-2 gap-6;
+  }
+
+  /* Typography */
+  .heading-primary {
+    @apply text-3xl font-display font-bold;
+    color: var(--foreground-color);
+  }
+
+  .heading-section {
+    @apply text-xl font-display font-bold mb-4 pb-2;
+    color: var(--background-color);
+    border-bottom: 1px solid rgb(var(--background) / 0.2);
+  }
+
+  /* Cards & Sections */
+  .metadata-card {
+    @apply p-6 rounded-lg shadow-sm;
+    background: var(--dark-accent-color);
+    border: 1px solid var(--dark-accent-color);
+  }
+
+  .error-message {
+    @apply p-4 rounded-lg;
+    color: var(--error-color);
+    background-color: rgb(var(--error) / 0.1);
+    border: 1px solid rgb(var(--error) / 0.2);
+  }
+
+  /* Code & Pre blocks */
+  .code-block {
+    @apply p-3 rounded whitespace-pre-wrap break-words text-sm;
+    background-color: rgb(var(--background) / 0.1);
+    color: var(--background-color);
+  }
+
+  .preview-code {
+    @apply p-3 rounded flex-1 text-sm whitespace-pre-wrap break-all;
+    background-color: var(--background-color);
+    color: var(--foreground-color);
+  }
+
+  /* Form elements */
+  .input-form {
+    @apply w-full max-w-2xl flex gap-4;
+  }
+
+  .text-input {
+    @apply flex-1 px-4 py-2 rounded-lg shadow-sm font-mono;
+    background: var(--background-color);
+    color: var(--foreground-color);
+    border: 1px solid var(--dark-accent-color);
+  }
+
+  .submit-button {
+    @apply px-6 py-2 rounded-lg shadow-sm;
+    background: var(--main-color);
+    color: var(--background-color);
+    &:hover {
+      opacity: 0.9;
+    }
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+
+  /* Theme toggle */
+  .theme-toggle {
+    @apply fixed top-4 right-4 p-2 rounded-lg shadow-sm transition-colors;
+    background: var(--background-color);
+    &:hover {
+      background: var(--dark-accent-color);
+    }
+  }
+
+  /* Utility classes */
+  .muted-text {
+    color: rgb(var(--background) / 0.7);
+  }
+
+  .italic-muted {
+    @apply italic;
+    color: rgb(var(--background) / 0.5);
+  }
 }

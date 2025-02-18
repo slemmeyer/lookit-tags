@@ -20,24 +20,28 @@ export default function UrlInput({ onSubmit, isLoading = false }: UrlInputProps)
   };
 
   return (
-    <form onSubmit={handleSubmit} className="w-full max-w-2xl">
-      <div className="flex flex-col sm:flex-row gap-4">
-        <input
-          type="text"
-          value={url}
-          onChange={(e) => setUrl(e.target.value)}
-          placeholder={UI_CONSTANTS.PLACEHOLDER.URL_INPUT}
-          className="flex-1 px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800"
-          required
-        />
-        <button
-          type="submit"
-          disabled={isLoading}
-          className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
-        >
-          {isLoading ? UI_CONSTANTS.BUTTON_TEXT.CHECKING : UI_CONSTANTS.BUTTON_TEXT.CHECK}
-        </button>
-      </div>
+    <form 
+      onSubmit={handleSubmit} 
+      className="input-form"
+      data-component="url-form"
+    >
+      <input
+        type="text"
+        value={url}
+        onChange={(e) => setUrl(e.target.value)}
+        placeholder={UI_CONSTANTS.PLACEHOLDER.URL_INPUT}
+        className="text-input"
+        data-element="url-input"
+        required
+      />
+      <button
+        type="submit"
+        disabled={isLoading}
+        className="submit-button"
+        data-element="submit-button"
+      >
+        {isLoading ? UI_CONSTANTS.BUTTON_TEXT.CHECKING : UI_CONSTANTS.BUTTON_TEXT.CHECK}
+      </button>
     </form>
   );
 } 

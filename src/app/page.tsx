@@ -28,13 +28,18 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen p-8 space-y-8">
-      <h1 className="text-3xl font-bold text-center">Lookit the tags I&apos;ve found!</h1>
-      <div className="flex flex-col items-center gap-8">
+    <main className="container">
+      <h1 className="heading-primary">
+        Lookit the tags I&apos;ve found!
+      </h1>
+      <div className="content-wrapper">
         <UrlInput onSubmit={handleSubmit} isLoading={isLoading} />
         
         {error && (
-          <div className="text-red-500 bg-red-100 dark:bg-red-900/30 p-4 rounded-lg">
+          <div 
+            className="error-message"
+            data-element="error-message"
+          >
             {error}
           </div>
         )}

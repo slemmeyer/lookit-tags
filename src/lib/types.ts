@@ -21,10 +21,6 @@ export interface ErrorResponse {
 }
 
 // Component Props Types
-export interface MetaResultsProps {
-  results: MetadataResponse | null;
-}
-
 export interface MetadataSectionProps {
   title: string;
   children: React.ReactNode;
