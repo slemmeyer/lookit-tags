@@ -8,6 +8,7 @@
   --main: #E4B7B7;
   --light-accent: #F2BC60;
   --dark-accent: #A49DAA;
+  --error: #EF4444;
 }
 
 .dark {
@@ -16,6 +17,7 @@
   --main: #E4B7B7;
   --light-accent: #F2BC60;
   --dark-accent: #A49DAA;
+  --error: #EF4444;
 }
 
 body {

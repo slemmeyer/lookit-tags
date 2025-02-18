@@ -27,7 +27,11 @@ export function CardsSection({ twitter, schemaOrg }: CardsSectionProps) {
         {schemaOrg?.length ? (
           <div className="space-y-4">
             {schemaOrg.map((schema, index) => (
-              <pre key={index} className="overflow-x-auto p-2 rounded bg-gray-100 dark:bg-gray-800 text-sm font-mono">
+              <pre 
+                key={index} 
+                className="overflow-x-auto p-2 rounded bg-background/10 text-background text-sm font-mono"
+                data-element="schema-content"
+              >
                 {JSON.stringify(JSON.parse(schema), null, 2)}
               </pre>
             ))}

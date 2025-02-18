@@ -37,7 +37,7 @@ export default function Home() {
         
         {error && (
           <div 
-            className="text-red-500 bg-red-100 dark:bg-red-900/30 p-4 rounded-lg"
+            className="text-error bg-error/10 p-4 rounded-lg border border-error/20"
             data-element="error-message"
           >
             {error}
