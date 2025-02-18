@@ -1,8 +1,4 @@
-import { MetaResultsProps } from './types';
-import { TitleSection } from './sections/TitleSection';
-import { MetaTagsSection } from './sections/MetaTagsSection';
-import { CardsSection } from './sections/CardsSection';
-import { PreviewsSection } from './sections/PreviewsSection';
+import type { MetaResultsProps } from './types';
 import { MetadataSection } from './components/MetadataSection';
 import { TagDisplay, EmptyTagDisplay } from './components/TagDisplay';
 
