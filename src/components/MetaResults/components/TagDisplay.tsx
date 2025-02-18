@@ -1,19 +1,24 @@
-import { TagDisplayProps } from '../types';
+import { UI_CONSTANTS } from '@/lib/constants';
+import type { MetaTag } from '@/lib/types';
+
+interface TagDisplayProps {
+  tag: MetaTag;
+}
 
 export function TagDisplay({ tag }: TagDisplayProps) {
   return (
     <div 
-      className="mb-2 last:mb-0"
+      className="mb-3 last:mb-0"
       data-component="tag-display"
     >
-      <span 
-        className="font-mono text-sm text-foreground"
+      <div 
+        className="text-sm text-background/70 mb-1"
         data-element="tag-name"
       >
         {tag.name}
-      </span>
+      </div>
       <pre 
-        className="mt-1 p-2 rounded bg-background/10 text-foreground text-sm whitespace-pre-wrap break-words"
+        className="bg-background/10 p-3 rounded whitespace-pre-wrap break-words text-sm text-background"
         data-element="tag-content"
       >
         {tag.content}
