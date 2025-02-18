@@ -7,7 +7,7 @@ export function MetadataSection({ title, children }: MetadataSectionProps) {
       data-component="metadata-section"
     >
       <h2 
-        className="text-xl font-bold mb-4 pb-2 border-b border-gray-200 text-foreground"
+        className="text-xl font-display font-bold mb-4 pb-2 border-b border-gray-200 text-foreground"
         data-element="section-title"
       >
         {title}

@@ -6,7 +6,7 @@ export function TagDisplay({ tag }: TagDisplayProps) {
       <span className="font-mono text-sm text-foreground/70">
         {tag.name}:
       </span>
-      <span className="ml-2 text-sm break-words text-foreground">
+      <span className="ml-2 text-sm break-words text-foreground font-sans">
         {tag.content}
       </span>
     </div>

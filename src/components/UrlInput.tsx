@@ -30,7 +30,7 @@ export default function UrlInput({ onSubmit, isLoading = false }: UrlInputProps)
         value={url}
         onChange={(e) => setUrl(e.target.value)}
         placeholder={UI_CONSTANTS.PLACEHOLDER.URL_INPUT}
-        className="flex-1 px-4 py-2 rounded-lg border border-gray-200 bg-background shadow-sm"
+        className="flex-1 px-4 py-2 rounded-lg border border-gray-200 bg-background shadow-sm font-mono"
         data-element="url-input"
         required
       />
