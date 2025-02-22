@@ -113,7 +113,6 @@ This project is configured for deployment on Vercel.
 - Optimized image loading
 - Dark mode without flashing
 - Efficient meta tag parsing
-- Redis caching (optional)
 
 ## Contributing
 
